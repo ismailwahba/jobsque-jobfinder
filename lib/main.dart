@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 
 import 'approot/app_root.dart';
 
+PageController pageController = PageController(initialPage: 0);
+int currentPageIndecator = 0;
+
 void main() {
   // Bloc.observer = MyBlocObserver();
 
