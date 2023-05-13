@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../presentation/screens/findgob/findgob_screen.dart';
+import '../presentation/screens/createacount/createaccount_screen.dart';
+import '../presentation/screens/onboarding/onboarding_screen.dart';
 import '../presentation/screens/splach/splach_screen.dart';
 // import '../presentation/screens/splach/splash_screen.dart';
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
 
           // You can use the library anywhere in the app even in theme
 
-          home: Splach(),
+          home: CreateAccountScreen(),
         );
       },
     );

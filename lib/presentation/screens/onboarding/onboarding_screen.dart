@@ -29,11 +29,11 @@ class _FindGobScreenState extends State<FindGobScreen> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   pageController.dispose();
+  //   super.dispose();
+  // }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(

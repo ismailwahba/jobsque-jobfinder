@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/constants/listonboarding.dart';
+import 'package:graduation_app/component/createscreen/createscreen.dart';
+import 'package:graduation_app/component/onboardingscreen/onboarding_screen.dart';
 
 import '../../../constants/colors.dart';
 import '../../../main.dart';

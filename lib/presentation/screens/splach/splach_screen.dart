@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/hexa_color.dart';
-import '../findgob/findgob_screen.dart';
+import '../onboarding/onboarding_screen.dart';
 // import 'package:ecommerce_app/modules/login/login_screen.dart';
 
 // import 'package:flutter_projectone/main.dart';
