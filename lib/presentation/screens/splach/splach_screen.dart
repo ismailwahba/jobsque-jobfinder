@@ -42,7 +42,7 @@ class _SplachState extends State<Splach> {
                 fit: BoxFit.cover,
               )),
               child: Image.asset("assets/images/Logo.png")),
-          nextScreen: FindGobScreen(),
+          nextScreen: OnBoardingScreen(),
           splashTransition: SplashTransition.fadeTransition,
         ),
       ),

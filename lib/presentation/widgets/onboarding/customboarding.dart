@@ -1,8 +1,12 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/component/createscreen/createscreen.dart';
-import 'package:graduation_app/component/onboardingscreen/onboarding_screen.dart';
+
+import 'package:graduation_app/constants/string.dart';
+import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
 
 import '../../../constants/colors.dart';
 import '../../../main.dart';
@@ -21,14 +25,20 @@ class CustomButtonOnBoarding extends StatelessWidget {
           color: AppColor.primaryColor),
       child: MaterialButton(
         onPressed: () {
-          if (currentPageIndecator == contents.length - 1) {}
+          if (OnboardingCubit.get(context).currentPageIndecator ==
+              OnboardingCubit.get(context).contents.length - 1) {
+            Navigator.pushNamed(context, routeCreateAccountScreen);
+          }
           pageController.nextPage(
             duration: const Duration(microseconds: 100),
             curve: Curves.bounceIn,
           );
         },
         child: Text(
-          currentPageIndecator == contents.length - 1 ? "GetStarted" : "Next",
+          OnboardingCubit.get(context).currentPageIndecator ==
+                  OnboardingCubit.get(context).contents.length - 1
+              ? "GetStarted"
+              : "Next",
           style: TextStyle(
               color: Colors.white, fontSize: 16.0.sp, letterSpacing: 1),
         ),

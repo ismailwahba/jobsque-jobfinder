@@ -8,14 +8,9 @@ class HomeIndecator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          ImageAsset.homeIndicatorImage,
-        ),
-      ],
+    return Image.asset(
+      // alignment: Alignment.bottomCenter,
+      ImageAsset.homeIndicatorImage,
     );
   }
 }

@@ -1,8 +1,11 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, override_on_non_overriding_member, annotate_overrides
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, override_on_non_overriding_member, annotate_overrides, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'dart:js';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/customboarding.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/customslider.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/dotcontroller.dart';
@@ -11,20 +14,20 @@ import 'package:graduation_app/presentation/widgets/onboarding/dotcontroller.dar
 import '../../../constants/images.dart';
 import '../../../main.dart';
 
-class FindGobScreen extends StatefulWidget {
-  const FindGobScreen({super.key});
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
 
   @override
-  State<FindGobScreen> createState() => _FindGobScreenState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _FindGobScreenState extends State<FindGobScreen> {
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   // final _controller = PageController();
-  
+
   // late  ImageAsset imageAsset;
 
   @override
-    void initState() {
+  void initState() {
     pageController = PageController(initialPage: 0);
     super.initState();
   }
@@ -34,49 +37,48 @@ class _FindGobScreenState extends State<FindGobScreen> {
   //   pageController.dispose();
   //   super.dispose();
   // }
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Container(
-                margin: EdgeInsets.symmetric(vertical: 5.h),
-                child: Column(
-                        children: [
-                          Expanded(
-                            child: const CustomSliderOnBoarding(),
-                          ),
-                          Column(
-                            children: [
-                const CustomDotsControllerOnBoarding(),
-                SizedBox(
-                  height: 20.h,
-                ),
-                const CustomButtonOnBoarding(),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Image.asset(
-                  ImageAsset.homeIndicatorImage,
-                ),
-                            ],
-                          )
-                        ],
-                ),
-              )),
+    return BlocProvider(
+      create: (context) => OnboardingCubit(),
+      child: BlocConsumer<OnboardingCubit, OnboardingState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+            body: SafeArea(
+                child: Container(
+              margin: EdgeInsets.symmetric(vertical: 5.h),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: const CustomSliderOnBoarding(),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * .13,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const CustomDotsControllerOnBoarding(),
+                        // SizedBox(
+                        //   height: 20.h,
+                        // ),
+                        const CustomButtonOnBoarding(),
+                        // SizedBox(
+                        //   height: 20.h,
+                        // ),
+                        Image.asset(
+                          ImageAsset.homeIndicatorImage,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )),
+          );
+        },
+      ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

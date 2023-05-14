@@ -102,33 +102,3 @@ Widget defaultButtonSocial(
             ],
           )),
     );
-
-// Widget validPass() => Text(
-//       "Password must be at least 8 characters",
-//       style: TextStyle(
-//           fontSize: 16.sp, color: HexColor("#FF472B"), letterSpacing: .50),
-//     );
-String bla() {
-  return "adsdasdasdasd";
-}
-
-validPass() {
-  return Text(
-    "Password must be at least 8 characters",
-    style: TextStyle(color: HexColor("#60C631")),
-  );
-}
-
-Text inValidPass() {
-  return Text(
-    "Password must be at least 8 ",
-    style: TextStyle(color: HexColor("#FF472B")),
-  );
-}
-
-Pass() {
-  return Text(
-    "Password must be at least 8 characters",
-    style: TextStyle(color: Colors.amber),
-  );
-}
