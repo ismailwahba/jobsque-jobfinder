@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_app/constants/string.dart';
-import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
+import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/screens/createacount/createaccount_screen.dart';
+import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
+import 'package:graduation_app/presentation/screens/location/location_screen.dart';
 import 'package:graduation_app/presentation/screens/onboarding/onboarding_screen.dart';
 
 class AppRouter {
-  AppRouter() {
-  }
+  AppRouter() {}
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case routeOnboardingScreen:
@@ -26,6 +27,22 @@ class AppRouter {
               builder: (_) => BlocProvider(
                     create: (context) => OnboardingCubit(),
                     child: CreateAccountScreen(),
+                  ));
+        }
+      case routeInterestedTypesScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (context) => OnboardingCubit(),
+                    child: InterestedTypesScreen(),
+                  ));
+        }
+      case routeLocationScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (context) => OnboardingCubit(),
+                    child: LocationScreen(),
                   ));
         }
     }

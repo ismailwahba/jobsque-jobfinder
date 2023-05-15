@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
+import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
+import 'package:graduation_app/presentation/screens/location/location_screen.dart';
 
-import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/widgets/app_router.dart';
 
 import '../presentation/screens/createacount/createaccount_screen.dart';
@@ -68,7 +70,7 @@ class MyApp extends StatelessWidget {
 
               // You can use the library anywhere in the app even in theme
 
-              home: OnBoardingScreen(),
+              home: LocationScreen(),
             ));
       },
     );

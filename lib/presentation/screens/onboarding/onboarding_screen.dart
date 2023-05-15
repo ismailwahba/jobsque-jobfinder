@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'dart:js';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
+import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/customboarding.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/customslider.dart';
 import 'package:graduation_app/presentation/widgets/onboarding/dotcontroller.dart';

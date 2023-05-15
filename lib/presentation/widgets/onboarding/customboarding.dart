@@ -6,7 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:graduation_app/constants/string.dart';
-import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
+// import 'package:graduation_app/cubit/cubit/onboarding_cubit.dart';
+import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 
 import '../../../constants/colors.dart';
 import '../../../main.dart';
