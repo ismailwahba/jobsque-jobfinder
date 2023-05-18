@@ -11,6 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
 import 'package:graduation_app/presentation/screens/location/location_screen.dart';
+import 'package:graduation_app/presentation/screens/login/login_screen.dart';
+import 'package:graduation_app/presentation/screens/setupscreen/setup_screen.dart';
 
 import 'package:graduation_app/presentation/widgets/app_router.dart';
 
@@ -70,7 +72,7 @@ class MyApp extends StatelessWidget {
 
               // You can use the library anywhere in the app even in theme
 
-              home: LocationScreen(),
+              home: LoginScreen(),
             ));
       },
     );

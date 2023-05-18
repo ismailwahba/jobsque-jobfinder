@@ -24,11 +24,9 @@ class _InterestedTypesScreenState extends State<InterestedTypesScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: 20.w,
-          ),
+          margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               TitleInterestedScreen(),

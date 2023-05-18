@@ -8,5 +8,5 @@ class AppColor {
   static HexColor textformfield = HexColor("#9CA3AF");
   static HexColor borderColor = HexColor("#D1D5DB");
   static HexColor textSocialButton = HexColor("#363F5E");
-  static HexColor toggleButtons = HexColor("#091A7A");
+  static HexColor togglefill = HexColor("#091A7A");
 }

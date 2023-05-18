@@ -6,9 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/colors.dart';
 import '../../constants/hexa_color.dart';
 
-Widget defaultFormCreateScreen(
+Widget defaultFormLoginScreen(
         {required String hintText,
-        Widget? prefix,
+        required Widget prefix,
         Widget? suffix,
         required String? Function(String?)? validator,
         required var controller,
@@ -53,7 +53,7 @@ Widget defaultFormCreateScreen(
           validator: validator),
     );
 
-Widget defaultButtonCreateScreen(
+Widget defaultButtonLoginScreen(
         {required String text,
         Function()? onPressed,
         TextStyle? textStyle,
@@ -73,32 +73,3 @@ Widget defaultButtonCreateScreen(
         ),
       ),
     );
-
-// Widget defaultButtonSocial(
-//         {required String url, required String text, TextStyle? textStyle}) =>
-//     Container(
-//       width: ScreenUtil().setWidth(154),
-//       height: ScreenUtil().setHeight(57),
-//       decoration: BoxDecoration(
-//           color: HexColor('#FFFFFF'),
-//           borderRadius: BorderRadius.circular(8),
-//           border: Border.all(width: 1.0, color: AppColor.borderColor)),
-//       child: MaterialButton(
-//           onPressed: () {},
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children: [
-//               Image.asset(
-//                 url,
-//               ),
-//               Text(
-//                 text,
-//                 style: TextStyle(
-//                   fontSize: 16.0.sp,
-//                   fontWeight: FontWeight.w500,
-//                   color: AppColor.textSocialButton,
-//                 ),
-//               )
-//             ],
-//           )),
-//     );

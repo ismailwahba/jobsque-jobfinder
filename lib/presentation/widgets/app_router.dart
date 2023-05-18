@@ -7,10 +7,12 @@ import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 import 'package:graduation_app/presentation/screens/createacount/createaccount_screen.dart';
 import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
 import 'package:graduation_app/presentation/screens/location/location_screen.dart';
+import 'package:graduation_app/presentation/screens/login/login_screen.dart';
 import 'package:graduation_app/presentation/screens/onboarding/onboarding_screen.dart';
+import 'package:graduation_app/presentation/screens/setupscreen/setup_screen.dart';
 
 class AppRouter {
-  AppRouter() {}
+  // AppRouter() {}
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case routeOnboardingScreen:
@@ -43,6 +45,22 @@ class AppRouter {
               builder: (_) => BlocProvider(
                     create: (context) => OnboardingCubit(),
                     child: LocationScreen(),
+                  ));
+        }
+      case routesetUpScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (context) => OnboardingCubit(),
+                    child: SetUpScreen(),
+                  ));
+        }
+      case routeLoginScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (context) => OnboardingCubit(),
+                    child: LoginScreen(),
                   ));
         }
     }

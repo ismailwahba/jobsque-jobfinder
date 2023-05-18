@@ -52,7 +52,7 @@ class _CreateInformationState extends State<CreateInformation> {
           SizedBox(
             height: 15.h,
           ),
-          defaultForm(
+          defaultFormCreateScreen(
               contentPadding: EdgeInsetsDirectional.fromSTEB(0, 16.h, 0, 16.h),
               width: ScreenUtil().setWidth(327),
               height: ScreenUtil().setHeight(56),
@@ -72,7 +72,7 @@ class _CreateInformationState extends State<CreateInformation> {
           SizedBox(
             height: 10.0.h,
           ),
-          defaultForm(
+          defaultFormCreateScreen(
               contentPadding: EdgeInsetsDirectional.fromSTEB(0, 16.h, 0, 16.h),
               width: ScreenUtil().setWidth(327),
               height: ScreenUtil().setHeight(56),
@@ -92,7 +92,7 @@ class _CreateInformationState extends State<CreateInformation> {
           SizedBox(
             height: 10.0.h,
           ),
-          defaultForm(
+          defaultFormCreateScreen(
               contentPadding: EdgeInsetsDirectional.fromSTEB(0, 16.h, 0, 16.h),
               width: ScreenUtil().setWidth(327),
               height: ScreenUtil().setHeight(56),

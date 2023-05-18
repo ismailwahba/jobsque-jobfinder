@@ -1,7 +1,8 @@
+import 'package:graduation_app/constants/images.dart';
 import 'package:graduation_app/data/models/interestedtypes/interestedtypes_model.dart';
 
 List<InterestedTypes> contentstypes = [
-  InterestedTypes(image: "assets/images/bezier.png", title: "UI/UX Designer"),
+  InterestedTypes(image: ImageAsset.uiDesigner, title: "UI/UX Designer"),
   InterestedTypes(
       image: "assets/images/Ilustrator Category.png",
       title: "Ilustrator Designer"),

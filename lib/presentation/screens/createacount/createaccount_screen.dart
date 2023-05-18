@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/component/app_components.dart';
 import 'package:graduation_app/constants/icons.dart';
 import 'package:graduation_app/constants/string.dart';
-import 'package:graduation_app/main.dart';
 import 'package:graduation_app/presentation/widgets/createscreen/customsocialbutton.dart';
 import 'package:graduation_app/presentation/widgets/createscreen/form.dart';
 import 'package:graduation_app/presentation/widgets/createscreen/homeindecator.dart';
@@ -12,7 +12,7 @@ import 'package:graduation_app/presentation/widgets/createscreen/signupinformati
 
 import '../../../component/createscreen/createscreen.dart';
 import '../../../constants/colors.dart';
-import '../../../constants/hexa_color.dart';
+
 import '../../../constants/images.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -47,14 +47,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         // crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          IconButton(
-                            iconSize: 24.w,
+                          ArrowBackIcon(
                             onPressed: () {
                               Navigator.pushNamed(
                                   context, routeOnboardingScreen);
                             },
-                            icon: Icon(AppIcons.arrowback),
-                            color: AppColor.arrowicon,
                           ),
                           Image.asset(
                             ImageAsset.logoImage,

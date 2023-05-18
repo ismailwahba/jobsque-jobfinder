@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:graduation_app/component/createscreen/createscreen.dart';
+import 'package:graduation_app/component/app_components.dart';
+
+// import 'package:graduation_app/component/createscreen/createscreen.dart';
 import 'package:graduation_app/constants/images.dart';
 
 class SocialButton extends StatelessWidget {
@@ -12,8 +12,8 @@ class SocialButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        defaultButtonSocial(url: ImageAsset.google, text: "Google"),
-        defaultButtonSocial(url: ImageAsset.facebook, text: "Facebook"),
+        DefaultSocialButtons(url: ImageAsset.google, text: "Google"),
+        DefaultSocialButtons(url: ImageAsset.facebook, text: "Facebook",),
       ],
     );
   }

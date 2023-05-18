@@ -2,12 +2,10 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_app/component/createscreen/createscreen.dart';
-import 'package:graduation_app/component/onboarding/findgob_screen.dart';
+
 import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
 
 import '../../../constants/colors.dart';
-import '../../../main.dart';
 
 class CustomDotsControllerOnBoarding extends StatefulWidget {
   const CustomDotsControllerOnBoarding({super.key});
