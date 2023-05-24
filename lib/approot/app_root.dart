@@ -8,7 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/cubit/login/login_cubit.dart';
 import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
+// import 'package:graduation_app/cubit/register/cubit/register_cubit.dart';
+import 'package:graduation_app/cubit/register/register_cubit.dart';
 import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
 import 'package:graduation_app/presentation/screens/location/location_screen.dart';
 import 'package:graduation_app/presentation/screens/login/login_screen.dart';
@@ -41,6 +44,12 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider(
                 create: (context) => OnboardingCubit(),
+              ),
+              BlocProvider(
+                create: (context) => RegisterCubit(),
+              ),
+              BlocProvider(
+                create: (context) => LoginCubit(),
               ),
             ],
             child: MaterialApp(

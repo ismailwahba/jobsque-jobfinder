@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_app/component/app_components.dart';
 import 'package:graduation_app/constants/colors.dart';
 import 'package:graduation_app/constants/string.dart';
@@ -17,6 +18,9 @@ class CustomButtonLocationScreen extends StatelessWidget {
           DefaultButtonScreens(
             color: AppColor.primaryColor,
             text: "Next",
+            textStyle: TextStyle(
+                color: Colors.white, fontSize: 16.sp, letterSpacing: .1
+                ),
             onPressed: () {
               Navigator.pushNamed(context, routesetUpScreen);
             },

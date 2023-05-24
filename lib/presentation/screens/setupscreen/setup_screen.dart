@@ -89,6 +89,7 @@ class _SetUpScreenState extends State<SetUpScreen> {
                 DefaultButtonScreens(
                   color: AppColor.primaryColor,
                   text: "Get Started",
+                  textStyle: TextStyle(),
                   onPressed: () {},
                 ),
                 SizedBox(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:graduation_app/cubit/register/cubit/register_cubit.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/hexa_color.dart';
@@ -53,26 +54,29 @@ Widget defaultFormCreateScreen(
           validator: validator),
     );
 
-Widget defaultButtonCreateScreen(
-        {required String text,
-        Function()? onPressed,
-        TextStyle? textStyle,
-        Color? color,
-        double? width,
-        double? height}) =>
+Widget defaultButtonCreateScreen({
+  // required String text,
+  Function()? onPressed,
+  // TextStyle? textStyle,
+  Color? color,
+  // double? width,
+  // double? height
+}) =>
     Container(
-      width: width,
-      height: height,
+      width: ScreenUtil().setWidth(357),
+      height: ScreenUtil().setHeight(48),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(1000), color: color),
       child: MaterialButton(
         onPressed: onPressed,
         child: Text(
-          text,
-          style: textStyle,
+          "Create account",
+          style: TextStyle(
+              color: Colors.white, fontSize: 16.sp, letterSpacing: .1),
         ),
       ),
     );
+
 
 // Widget defaultButtonSocial(
 //         {required String url, required String text, TextStyle? textStyle}) =>

@@ -11,10 +11,12 @@ class DefaultButtonScreens extends StatelessWidget {
   String text;
   Color color;
   Color? textColor;
+  TextStyle textStyle;
   void Function()? onPressed;
   DefaultButtonScreens(
       {Key? key,
       required this.text,
+      required this.textStyle,
       required this.onPressed,
       this.textColor,
       required this.color})
@@ -30,8 +32,7 @@ class DefaultButtonScreens extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             text,
-            style: TextStyle(
-                color: textColor, fontSize: 16.0.sp, letterSpacing: 1),
+            style: textStyle,
           ),
         ));
   }
@@ -80,7 +81,7 @@ class DefaultSocialButtons extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(ImageAsset.facebook),
+              Image.asset(url),
               Text(
                 text,
                 style: TextStyle(

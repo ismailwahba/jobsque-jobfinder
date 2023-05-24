@@ -1,16 +1,24 @@
 class ImageAsset {
   static const String rootImages = "assets/images";
+// ! Onboarding Screen
 
   static const String onBoardingImageOne = "$rootImages/Background.png";
   static const String onBoardingImageTwo = "$rootImages/Background2.png";
   static const String onBoardingImageThree = "$rootImages/Background3.png";
+
   static const String logoImage = "$rootImages/Logo.png";
   static const String homeIndicatorImage = "$rootImages/Indicator.png";
+
+// ! CreateAccount Screen
+
   static const String profileiconcreate = "$rootImages/profile.png";
   static const String smsiconecreate = "$rootImages/sms.png";
   static const String lockiconecreate = "$rootImages/lock.png";
   static const String facebook = "$rootImages/Facebook.png";
-  static const String google = "$rootImages/google.png";
+  static const String google = "$rootImages/goog.png";
+
+// ! interestedTypes Screen
+
   static const String uiDesigner = "$rootImages/bezier.png";
   static const String ilustrator = "$rootImages/Ilustrator Category.png";
   static const String developerCategory = "$rootImages/Developer Category.png";
@@ -19,6 +27,9 @@ class ImageAsset {
       "$rootImages/Information technology category.png";
   static const String researchAndAnalytics =
       "$rootImages/Research and Analytics category.png";
+
+  // ! Location Screen
+
   static const String unitedStates = "$rootImages/United States.png";
   static const String malaysia = "$rootImages/Malaysia.png";
   static const String singapore = "$rootImages/Singapore.png";
@@ -32,6 +43,8 @@ class ImageAsset {
   static const String saudiArabia = "$rootImages/Saudi Arabia.png";
   static const String argentina = "$rootImages/Argentina.png";
   static const String brazil = "$rootImages/Brazil.png";
+
+  // !
   static const String accountIlustration =
       "$rootImages/Success Account Ilustration.png";
 }

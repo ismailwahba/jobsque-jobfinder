@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_app/constants/string.dart';
+import 'package:graduation_app/cubit/login/login_cubit.dart';
 import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
+import 'package:graduation_app/presentation/screens/SuggestedJob/suggestedJob_screen.dart';
 import 'package:graduation_app/presentation/screens/createacount/createaccount_screen.dart';
 import 'package:graduation_app/presentation/screens/interestedtypes/interestedtypes_screen.dart';
 import 'package:graduation_app/presentation/screens/location/location_screen.dart';
@@ -61,6 +63,14 @@ class AppRouter {
               builder: (_) => BlocProvider(
                     create: (context) => OnboardingCubit(),
                     child: LoginScreen(),
+                  ));
+        }
+      case routeSuggestJobScreenScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => BlocProvider(
+                    create: (context) => LoginCubit(),
+                    child: SuggestJobScreen(),
                   ));
         }
     }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/component/app_components.dart';
 import 'package:graduation_app/component/createscreen/createscreen.dart';
 import 'package:graduation_app/constants/hexa_color.dart';
 import 'package:graduation_app/constants/string.dart';
@@ -16,13 +17,10 @@ class CustomButton extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          defaultButtonCreateScreen(
-              width: ScreenUtil().setWidth(327),
-              height: ScreenUtil().setHeight(48),
+          DefaultButtonScreens(
               text: 'Next',
-              textStyle: const TextStyle(
-                color: Colors.white,
-              ),
+              textStyle: TextStyle(
+                  color: Colors.white, fontSize: 16.sp, letterSpacing: .1),
               color: HexColor("#3366FF"),
               onPressed: () {
                 Navigator.pushNamed(context, routeLocationScreen);
