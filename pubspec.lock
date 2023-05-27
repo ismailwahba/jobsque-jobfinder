@@ -113,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  fancy_bottom_navigation:
+    dependency: "direct main"
+    description:
+      name: fancy_bottom_navigation
+      sha256: "90b1b4d9ee467a9c8868c478c4c4671b08a95e8781696428d14e57545794ddad"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.3"
   ffi:
     dependency: transitive
     description:
@@ -482,6 +490,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  top_snackbar_flutter:
+    dependency: "direct main"
+    description:
+      name: top_snackbar_flutter
+      sha256: "7d4aa8f0031ad4a597c02487b4bb9b0dbb6a8d76ce1ab6e13e9565f865c1b70c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0+1"
   typed_data:
     dependency: transitive
     description:

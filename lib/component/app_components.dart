@@ -96,7 +96,36 @@ class DefaultSocialButtons extends StatelessWidget {
   }
 }
 
-
-// Widget defaultButtonScreens() => 
-
-                        
+Widget defaultSearchForm() => SizedBox(
+      width: ScreenUtil().setWidth(327),
+      height: ScreenUtil().setHeight(48),
+      child: TextFormField(
+        // controller: emailController,
+        keyboardType: TextInputType.text,
+        // controller: controller,
+        decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            hintText: "Search....",
+            hintStyle: TextStyle(color: AppColor.textformfield, fontSize: 14.sp
+                // color: HexColor('#DA6317').withOpacity(.40),
+                ),
+            prefixIcon: Icon(
+              Icons.search,
+              color: HexColor('#F9A84D'),
+              size: 24.w,
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(100.r),
+                borderSide: BorderSide(
+                    // style: BorderStyle.none,
+                    color: AppColor.borderColor,
+                    width: 1.w)),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(100.r),
+              borderSide: BorderSide(
+                color: HexColor('#F9A84D'),
+              ),
+            )),
+      ),
+    );

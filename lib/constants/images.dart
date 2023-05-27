@@ -47,4 +47,12 @@ class ImageAsset {
   // !
   static const String accountIlustration =
       "$rootImages/Success Account Ilustration.png";
+
+  // ! SuggestJobScreen
+  static const String notification = "$rootImages/notification.png";
+  static const String archive = "$rootImages/archive-minus.png";
+  static const String home = "$rootImages/home.png";
+  static const String briefcase = "$rootImages/briefcase.png";
+  static const String profilevector = "$rootImages/profilevector.png";
+  static const String message = "$rootImages/message.png";
 }

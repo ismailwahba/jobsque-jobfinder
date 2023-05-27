@@ -34,6 +34,7 @@ dependencies:
   chips_choice: ^3.0.0
   cupertino_icons: ^1.0.2
   dio: ^5.1.2
+  fancy_bottom_navigation: ^0.3.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
@@ -45,6 +46,7 @@ dependencies:
   shared_preferences: ^2.1.1
   smooth_page_indicator: ^1.1.0
   toggle_switch: ^2.1.0
+  top_snackbar_flutter: ^3.0.0+1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -62,20 +64,20 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-  #   - images/a_dot_ham.jpeg
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+    #   - images/a_dot_ham.jpeg
+    # An image asset can refer to one or more resolution-specific "variants", see
+    # https://flutter.dev/assets-and-images/#resolution-aware
+    # For details regarding adding assets from package dependencies, see
+    # https://flutter.dev/assets-and-images/#from-packages
+    # To add custom fonts to your application, add a fonts section here,
+    # in this "flutter" section. Each entry in this list should have a
+    # "family" key with the font family name, and a "fonts" key with a
+    # list giving the asset and other descriptors for the font. For
+    # example:
+    # fonts:
+    # - family: RasmusAndersson
+    # fonts:
+    # - asset: fonts/RasmusAndersson/1593443255805-Inter-Medium.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

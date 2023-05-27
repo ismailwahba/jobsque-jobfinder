@@ -17,6 +17,8 @@ import 'package:graduation_app/cubit/login/login_cubit.dart';
 import 'package:graduation_app/data/models/login/login_model.dart';
 import 'package:graduation_app/presentation/screens/SuggestedJob/suggestedJob_screen.dart';
 import 'package:graduation_app/presentation/widgets/createscreen/homeindecator.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 // import 'package:graduation_app/cubit/login/login_cubit.dart';
 
@@ -38,6 +40,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool _obscureText = true;
   bool check = false;
+  late AnimationController localAnimationController;
 
   // String bla ="dfsdfsdfsdfsdfsdfsdf";
 
@@ -46,49 +49,26 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocProvider(
       create: (context) => LoginCubit(),
       child: BlocConsumer<LoginCubit, LoginState>(
-        listener: (ctx, state) {
-          // if (state is LoginError) {
-          //   ScaffoldMessenger.of(context).showSnackBar(
-          //       const SnackBar(content: Text("Error,Please try again later")));
-
-          //   // Toast.show("Error,Please try again later ",
-          //   // duration: Toast.lengthLong, gravity: Toast.bottom);
-          // }
+        listener: (context, state) {
           if (state is LoginSuccess) {
-            if (LoginCubit.get(context).loginModel!.status!) {
-              final snackBar = SnackBar(
-                elevation: 0,
-                behavior: SnackBarBehavior.floating,
-                backgroundColor: Colors.transparent,
-                content: AwesomeSnackbarContent(
-                  title: 'Well Done',
-                  message: 'Login Successfully',
-                  contentType: ContentType.success,
-                ),
-              );
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(snackBar);
-              Navigator.pushReplacementNamed(
-                  context, routeSuggestJobScreenScreen);
-            } else {
-              final snackBar = SnackBar(
-                elevation: 0,
-                behavior: SnackBarBehavior.floating,
-                backgroundColor: Colors.transparent,
-                content: AwesomeSnackbarContent(
-                  title: 'Oops!',
-                  messageFontSize: 15,
-                  message: 'Wrong Credentials',
-                  contentType: ContentType.failure,
-                ),
-              );
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(snackBar);
-            }
-            // Toast.show("login success",
-            //     duration: Toast.lengthLong, gravity: Toast.bottom);
+            showTopSnackBar(
+              Overlay.of(context),
+              CustomSnackBar.success(
+                message:
+                    "Good job, your release is successful. Have a nice day",
+              ),
+            );
+
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => SuggestJobScreen()));
+          } else {
+            showTopSnackBar(
+              Overlay.of(context),
+              CustomSnackBar.error(
+                message:
+                    "Something went wrong. Please check your credentials and try again",
+              ),
+            );
           }
         },
         builder: (context, state) {
@@ -305,17 +285,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                           cubit.emailLoginController.text
                                                       .isNotEmpty &&
                                                   cubit.passwordLoginController
-                                                      .text.isNotEmpty
+                                                      .text.isNotEmpty &&
+                                                  cubit.passwordLoginController
+                                                          .text.length >=
+                                                      8
                                               ? defaultButtonLoginScreenclicked(
                                                   textStyle: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: 16.sp,
                                                       letterSpacing: .1),
                                                   onPressed: () {
-                                                    // if (cubit.formKeyLogin
-                                                    //     .currentState!
-                                                    //     .validate())
-                                                    // {
                                                     cubit.userLogin(
                                                         email: cubit
                                                             .emailLoginController
@@ -323,9 +302,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         password: cubit
                                                             .passwordLoginController
                                                             .text);
-                                                    // Navigator.pushNamed(context,
-                                                    //     routeSuggestJobScreenScreen);
-                                                    // }
                                                   })
                                               : defaultButtonLoginScreenUnclicked(
                                                   textStyle: TextStyle(

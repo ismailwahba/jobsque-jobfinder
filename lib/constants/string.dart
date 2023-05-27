@@ -12,6 +12,6 @@ const routeSuggestJobScreenScreen = "/SuggestJob_Screen";
 
 // !  Api Url
 
-const Main_Url = "http://164.92.246.77/api";
+const Main_Url = "http://167.71.79.133/api";
 const Register_Url = "${Main_Url}/auth/register";
 const Login_Url = "${Main_Url}/auth/login";
