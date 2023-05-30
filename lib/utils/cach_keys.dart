@@ -1,1 +1,1 @@
-enum CacheKeys { name,email, password, id, isLogin }
+enum CacheKeys { token, password, isLogin, email }

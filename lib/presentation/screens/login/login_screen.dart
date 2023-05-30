@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable, unused_field, avoid_print, unused_local_variable
+// ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable, unused_field, avoid_print, unused_local_variable, curly_braces_in_flow_control_structures
 
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,12 +11,16 @@ import 'package:graduation_app/constants/hexa_color.dart';
 
 import 'package:graduation_app/constants/string.dart';
 import 'package:graduation_app/cubit/login/login_cubit.dart';
-import 'package:graduation_app/cubit/login/login_cubit.dart';
-import 'package:graduation_app/cubit/login/login_cubit.dart';
+// import 'package:graduation_app/presentation/screens/mainlayout/mainlayout_screen.dart';
+// import 'package:graduation_app/cubit/login/login_cubit.dart';
+// import 'package:graduation_app/cubit/login/login_cubit.dart';
 
-import 'package:graduation_app/data/models/login/login_model.dart';
-import 'package:graduation_app/presentation/screens/SuggestedJob/suggestedJob_screen.dart';
+// import 'package:graduation_app/data/models/login/login_model.dart';
+// import 'package:graduation_app/presentation/screens/SuggestedJob/suggestedJob_screen.dart';
 import 'package:graduation_app/presentation/widgets/createscreen/homeindecator.dart';
+import 'package:graduation_app/utils/cach_helper.dart';
+import 'package:graduation_app/utils/cach_keys.dart';
+// import 'package:graduation_app/utils/cach_keys.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -26,8 +30,8 @@ import '../../../component/createscreen/createscreen.dart';
 import '../../../constants/colors.dart';
 
 import '../../../constants/images.dart';
-import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
-import 'login_screen.dart';
+// import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+// import 'login_screen.dart';
 
 // late LoginModel loginMod;
 class LoginScreen extends StatefulWidget {
@@ -40,7 +44,37 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool _obscureText = true;
   bool check = false;
-  late AnimationController localAnimationController;
+  @override
+  // void initState() {
+  //   super.initState();
+  //   LoginCubit.get(context).emailLoginController.text = '';
+  //   LoginCubit.get(context).passwordLoginController.text = '';
+  //   LoginCubit.get(context).emailLoginController.addListener(() {
+  //     setState(() {}); // setState every time text changes
+  //   });
+  //   LoginCubit.get(context).passwordLoginController.addListener(() {
+  //     setState(() {});
+  //   });
+  // }
+
+  @override
+  void dispose() {
+    LoginCubit.get(context).emailLoginController.dispose();
+    LoginCubit.get(context).passwordLoginController.dispose();
+    super.dispose();
+  }
+
+  // late AnimationController localAnimationController;
+  @override
+  void initState() {
+    if (CacheHelper.getData(key: 'checked') ?? false) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.pushReplacementNamed(context, routeHomeLayoutScreen);
+      });
+      // Navigator.pushReplacementNamed(context, routeHomeLayoutScreen);
+    }
+    super.initState();
+  }
 
   // String bla ="dfsdfsdfsdfsdfsdfsdf";
 
@@ -51,23 +85,24 @@ class _LoginScreenState extends State<LoginScreen> {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
-            showTopSnackBar(
-              Overlay.of(context),
-              CustomSnackBar.success(
-                message:
-                    "Good job, your release is successful. Have a nice day",
-              ),
-            );
-
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => SuggestJobScreen()));
-          } else {
+            if (state.loginModel.status!) {
+              showTopSnackBar(
+                Overlay.of(context),
+                CustomSnackBar.success(
+                  message:
+                      "Good job, your release is successful. Have a nice day",
+                ),
+              );
+            }
+            Navigator.pushReplacementNamed(context, routeHomeLayoutScreen);
+          } else if (state is LoginError) {
             showTopSnackBar(
               Overlay.of(context),
               CustomSnackBar.error(
                 message:
                     "Something went wrong. Please check your credentials and try again",
               ),
+              // emit(LoginError());
             );
           }
         },
@@ -302,6 +337,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                                         password: cubit
                                                             .passwordLoginController
                                                             .text);
+                                                    if (check == true) {
+                                                      CacheHelper.saveData(
+                                                          key: "checked",
+                                                          value: true);
+                                                    }
                                                   })
                                               : defaultButtonLoginScreenUnclicked(
                                                   textStyle: TextStyle(

@@ -55,4 +55,5 @@ class ImageAsset {
   static const String briefcase = "$rootImages/briefcase.png";
   static const String profilevector = "$rootImages/profilevector.png";
   static const String message = "$rootImages/message.png";
+  static const String twitterLogo = "$rootImages/Twitter Logo.png";
 }

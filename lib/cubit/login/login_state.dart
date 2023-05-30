@@ -10,8 +10,8 @@ class LoginInitial extends LoginState {}
 class LoginLoading extends LoginState {}
 
 class LoginSuccess extends LoginState {
-  // LoginModel loginModel;
-  // LoginSuccess(this.loginModel);
+  LoginModel loginModel;
+  LoginSuccess(this.loginModel);
 }
 
 class LoginError extends LoginState {}

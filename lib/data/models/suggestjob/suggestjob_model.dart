@@ -1,10 +1,10 @@
-class SuggestJobModel {
+class SuggestedModel {
   bool? status;
   List<Data>? data;
 
-  SuggestJobModel({this.status, this.data});
+  SuggestedModel({this.status, this.data});
 
-  SuggestJobModel.fromJson(Map<String, dynamic> json) {
+  SuggestedModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     if (json['data'] != null) {
       data = <Data>[];

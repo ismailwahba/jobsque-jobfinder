@@ -1,10 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_app/constants/hexa_color.dart';
 import 'package:graduation_app/constants/images.dart';
 import 'package:graduation_app/cubit/homelayout/mainlayout_cubit.dart';
+import 'package:graduation_app/presentation/screens/login/login_screen.dart';
+import 'package:graduation_app/utils/cach_helper.dart';
 
 class HomeLayoutScreen extends StatefulWidget {
   const HomeLayoutScreen({super.key});
@@ -28,7 +32,9 @@ class _HomeLayoutScreenState extends State<HomeLayoutScreen> {
               title:
                   Text(cubit.titles[MainLayoutCubit.get(context).currentIndex]),
             ),
-            body: MainLayoutCubit.get(context).screens[cubit.currentIndex],
+            body: CacheHelper.getData(key: "checked") == false
+                ? LoginScreen()
+                : MainLayoutCubit.get(context).screens[cubit.currentIndex],
             bottomNavigationBar: BottomNavigationBar(
                 elevation: 0,
                 // backgroundColor: Colors.red,

@@ -6,10 +6,12 @@ import 'approot/app_root.dart';
 
 PageController pageController = PageController(initialPage: 0);
 
-Future<void> main() async {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // bool islogin=true;
-  // await CacheHelper.init();
-  // await CacheHelper.getData(key: '');
+  await CacheHelper.init();
+  await CacheHelper.getData(key: '');
 
   runApp(MyApp(
     appRouter: AppRouter(),
