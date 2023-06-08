@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_app/cubit/homelayout/mainlayout_cubit.dart';
 import 'package:graduation_app/cubit/login/login_cubit.dart';
 import 'package:graduation_app/cubit/onboarding/onboarding_cubit.dart';
+import 'package:graduation_app/cubit/profile/profile_cubit.dart';
 import 'package:graduation_app/cubit/register/register_cubit.dart';
 import 'package:graduation_app/cubit/suggestedJob/suggested_job_cubit.dart';
 import 'package:graduation_app/presentation/screens/SuggestedJob/suggestedJob_screen.dart';
@@ -53,6 +55,12 @@ class MyApp extends StatelessWidget {
               ),
               BlocProvider(
                 create: (context) => SuggestedJobCubit(),
+              ),
+              BlocProvider(
+                create: (context) => MainLayoutCubit(),
+              ),
+              BlocProvider(
+                create: (context) => ProfileCubit(),
               ),
             ],
             child: MaterialApp(

@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, avoid_print
+// ignore_for_file: unused_local_variable, avoid_print, unused_field, prefer_final_fields, unused_element
 
 import 'dart:convert';
 
@@ -26,8 +26,45 @@ class RegisterCubit extends Cubit<RegisterState> {
   static var emailController = TextEditingController();
   static var passwordController = TextEditingController();
   static var formKey = GlobalKey<FormState>();
+  String _name = "", _email = '', _password = "";
+  String get name => _name;
+  String get email => _email;
+  String get password => _password;
+
+  void onUserNameChanged(String name) {
+    _name = name;
+    emit(OnUserNameChanged());
+  }
+
+  void onPasswordChanged(String password) {
+    _password = password;
+    emit(OnPasswordChanged());
+  }
+
+  void onEmailChanged(String email) {
+    _email = email;
+    emit(OnEmailChanged());
+  }
+
+  bool isRegisterButtonEnabeled() {
+    return _isUserNameValid() && _isPasswordValid() && _isEmailValid();
+  }
+
+  bool _isUserNameValid() {
+    return _name.isNotEmpty;
+  }
+
+  bool _isPasswordValid() {
+    return _password.isNotEmpty && _password.length >= 8;
+  }
+
+  bool _isEmailValid() {
+    return _email.isNotEmpty;
+  }
 
   // static bool isChanged = true;
+  bool obscureText = true;
+
   RegisterModel? registerModel;
   void userRegister(
       {required String name,
@@ -43,10 +80,13 @@ class RegisterCubit extends Cubit<RegisterState> {
       if (value.statusCode == 200) {
         var json = jsonDecode(value.body);
         registerModel = RegisterModel.fromJson(json);
+        // print("hamada");
+        print("ismail wahba");
         print(value.body);
         print(registerModel!.data!.name);
         emit(RegisterSuccess());
       } else {
+        print("hamada");
         print("error");
         emit(RegisterError());
       }

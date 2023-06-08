@@ -129,3 +129,21 @@ Widget defaultSearchForm() => SizedBox(
             )),
       ),
     );
+
+class LogoItem extends StatelessWidget {
+  const LogoItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Image.asset(
+          ImageAsset.logoImage,
+          width: ScreenUtil().setWidth(81),
+          height: ScreenUtil().setHeight(19),
+        )
+      ],
+    );
+  }
+}

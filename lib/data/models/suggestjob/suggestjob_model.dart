@@ -1,26 +1,18 @@
 class SuggestedModel {
   bool? status;
-  List<Data>? data;
+  List<Data>? dataJobs=[];
 
-  SuggestedModel({this.status, this.data});
+  SuggestedModel({this.status, this.dataJobs});
 
   SuggestedModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
+            
+
     if (json['data'] != null) {
-      data = <Data>[];
-      json['data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
+      json['data'].forEach((data) {
+        dataJobs!.add(Data.fromJson(data));
       });
     }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    return data;
   }
 }
 
@@ -83,28 +75,5 @@ class Data {
     expired = json['expired'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['image'] = this.image;
-    data['job_time_type'] = this.jobTimeType;
-    data['job_type'] = this.jobType;
-    data['job_level'] = this.jobLevel;
-    data['job_description'] = this.jobDescription;
-    data['job_skill'] = this.jobSkill;
-    data['comp_name'] = this.compName;
-    data['comp_email'] = this.compEmail;
-    data['comp_website'] = this.compWebsite;
-    data['about_comp'] = this.aboutComp;
-    data['location'] = this.location;
-    data['salary'] = this.salary;
-    data['favorites'] = this.favorites;
-    data['expired'] = this.expired;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
-    return data;
   }
 }

@@ -9,6 +9,12 @@ class LoginInitial extends LoginState {}
 
 class LoginLoading extends LoginState {}
 
+class OnPasswordChanged extends LoginState {}
+
+class OnEmailChanged extends LoginState {}
+// class MessageSuccessfulLoginState extends LoginState {}
+// class MessageFailedLoginState extends LoginState {}
+
 class LoginSuccess extends LoginState {
   LoginModel loginModel;
   LoginSuccess(this.loginModel);

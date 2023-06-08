@@ -20,55 +20,37 @@ class HomeLayoutScreen extends StatefulWidget {
 class _HomeLayoutScreenState extends State<HomeLayoutScreen> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MainLayoutCubit(),
-      child: BlocConsumer<MainLayoutCubit, MainLayoutState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          MainLayoutCubit cubit = MainLayoutCubit.get(context);
+    return BlocBuilder<MainLayoutCubit, MainLayoutState>(
+      builder: (context, state) {
+        MainLayoutCubit cubit = MainLayoutCubit.get(context);
 
-          return Scaffold(
-            appBar: AppBar(
-              title:
-                  Text(cubit.titles[MainLayoutCubit.get(context).currentIndex]),
-            ),
-            body: CacheHelper.getData(key: "checked") == false
-                ? LoginScreen()
-                : MainLayoutCubit.get(context).screens[cubit.currentIndex],
-            bottomNavigationBar: BottomNavigationBar(
-                elevation: 0,
-                // backgroundColor: Colors.red,
-                // fixedColor: Colors.red,
-                // selectedIconTheme: colo,
-
-                // selectedItemColor: HexColor("#3366FF"),
-                // selectedIcon: HexColor("#3366FF"),
-                // selectedIconTheme:IconThemeData.fallback() ,
-
-                // backgroundColor: HexColor("#3366FF"),
-                selectedLabelStyle: TextStyle(color: HexColor("#3366FF")),
-                type: BottomNavigationBarType.fixed,
-                currentIndex: cubit.currentIndex,
-                onTap: (index) {
-                  cubit.changeIndex(index);
-                },
-                items: [
-                  BottomNavigationBarItem(
-                      icon: Image.asset(ImageAsset.home), label: "Home"),
-                  BottomNavigationBarItem(
-                      icon: Image.asset(ImageAsset.message), label: "Messages"),
-                  BottomNavigationBarItem(
-                      icon: Image.asset(ImageAsset.briefcase),
-                      label: "Applied"),
-                  BottomNavigationBarItem(
-                      icon: Image.asset(ImageAsset.archive), label: "Saved"),
-                  BottomNavigationBarItem(
-                      icon: Image.asset(ImageAsset.profilevector),
-                      label: "Profile"),
-                ]),
-          );
-        },
-      ),
+        return Scaffold(
+          body: CacheHelper.getData(key: "checked") == false
+              ? LoginScreen()
+              : MainLayoutCubit.get(context).screens[cubit.currentIndex],
+          bottomNavigationBar: BottomNavigationBar(
+              elevation: 0,
+              selectedLabelStyle: TextStyle(color: HexColor("#3366FF")),
+              type: BottomNavigationBarType.fixed,
+              currentIndex: cubit.currentIndex,
+              onTap: (index) {
+                cubit.changeIndex(index);
+              },
+              items: [
+                BottomNavigationBarItem(
+                    icon: Image.asset(ImageAsset.home), label: "Home"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(ImageAsset.message), label: "Messages"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(ImageAsset.briefcase), label: "Applied"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(ImageAsset.archivenav), label: "Saved"),
+                BottomNavigationBarItem(
+                    icon: Image.asset(ImageAsset.profilevector),
+                    label: "Profile"),
+              ]),
+        );
+      },
     );
   }
 }

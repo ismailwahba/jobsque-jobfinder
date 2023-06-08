@@ -11,8 +11,9 @@ Widget defaultFormCreateScreen(
         {required String hintText,
         Widget? prefix,
         Widget? suffix,
+        Function(String)? onChanged,
         required String? Function(String?)? validator,
-        required var controller,
+        TextEditingController? controller,
         EdgeInsetsGeometry? contentPadding,
         double? width,
         double? height,
@@ -23,11 +24,9 @@ Widget defaultFormCreateScreen(
       height: height,
       child: TextFormField(
           obscureText: obscureText,
-          // controller: emailController,
           keyboardType: TextInputType.text,
           controller: controller,
           decoration: InputDecoration(
-            // border: BorderRadius.circular(20),
             contentPadding: contentPadding,
             filled: true,
             fillColor: HexColor('#ffffff'),
@@ -37,7 +36,6 @@ Widget defaultFormCreateScreen(
             focusColor: Colors.green,
             iconColor: Colors.green,
             suffixIcon: suffix,
-
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.r),
                 borderSide: BorderSide(
@@ -45,9 +43,7 @@ Widget defaultFormCreateScreen(
                     color: AppColor.borderColor,
                     width: 1)),
           ),
-          onChanged: (String val) {
-            print(val);
-          },
+          onChanged: onChanged,
           onFieldSubmitted: (String val) {
             print(val);
           },

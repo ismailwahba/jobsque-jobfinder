@@ -1,3 +1,4 @@
+import 'package:graduation_app/utils/cach_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -22,6 +23,14 @@ class CacheHelper {
     required String key,
   }) {
     return sharedPreferences.get(key);
+  }
+  Future<bool> setToken(String value) async {
+    // final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return sharedPreferences.setString(CachKeys.token, value);
+  }
+
+  static dynamic getToken() async {
+    return sharedPreferences.getString(CachKeys.token);
   }
 
   static dynamic getListOFData({

@@ -13,3 +13,9 @@ class RegisterSuccess extends RegisterState {
 }
 
 class RegisterError extends RegisterState {}
+class OnUserNameChanged extends RegisterState {}
+
+class OnPasswordChanged extends RegisterState {}
+
+class OnEmailChanged extends RegisterState {}
+

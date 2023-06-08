@@ -51,9 +51,11 @@ class ImageAsset {
   // ! SuggestJobScreen
   static const String notification = "$rootImages/notification.png";
   static const String archive = "$rootImages/archive-minus.png";
+  static const String archivenav = "$rootImages/archive-minusnav.png";
   static const String home = "$rootImages/home.png";
   static const String briefcase = "$rootImages/briefcase.png";
   static const String profilevector = "$rootImages/profilevector.png";
   static const String message = "$rootImages/message.png";
+  static const String zoomLogo = "$rootImages/Zoom Logo.png";
   static const String twitterLogo = "$rootImages/Twitter Logo.png";
 }

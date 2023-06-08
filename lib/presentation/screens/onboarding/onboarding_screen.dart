@@ -39,46 +39,35 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   // }
 
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => OnboardingCubit(),
-      child: BlocConsumer<OnboardingCubit, OnboardingState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          return Scaffold(
-            body: SafeArea(
-                child: Container(
-              margin: EdgeInsets.symmetric(vertical: 5.h),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: const CustomSliderOnBoarding(),
+    return BlocBuilder<OnboardingCubit, OnboardingState>(
+      builder: (context, state) {
+        return Scaffold(
+          body: SafeArea(
+              child: Container(
+            margin: EdgeInsets.symmetric(vertical: 5.h),
+            child: Column(
+              children: [
+                Expanded(
+                  child: const CustomSliderOnBoarding(),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .13,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const CustomDotsControllerOnBoarding(),
+                      const CustomButtonOnBoarding(),
+                      Image.asset(
+                        ImageAsset.homeIndicatorImage,
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .13,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const CustomDotsControllerOnBoarding(),
-                        // SizedBox(
-                        //   height: 20.h,
-                        // ),
-                        const CustomButtonOnBoarding(),
-                        // SizedBox(
-                        //   height: 20.h,
-                        // ),
-                        Image.asset(
-                          ImageAsset.homeIndicatorImage,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )),
-          );
-        },
-      ),
+                )
+              ],
+            ),
+          )),
+        );
+      },
     );
   }
 }

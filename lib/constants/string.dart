@@ -16,7 +16,7 @@ const routeHomeLayoutScreen = "/HomeLayoutScreen_Screen";
 const Main_Url = "http://167.71.79.133/api";
 const Register_Url = "${Main_Url}/auth/register";
 const Login_Url = "${Main_Url}/auth/login";
-const SuggestedJob_Url = "${Main_Url}/jobs/sugest";
+const SuggestedJob_Url = "${Main_Url}/jobs/sugest/2";
 // const ShowJob_Url = "${Main_Url}/jobs?token=1187|1Ybfyds6fjCMpyiPKEmTnywmstkH761PbUnWOfbj";
 // http://167.71.79.133/api/jobs?token=1187|1Ybfyds6fjCMpyiPKEmTnywmstkH761PbUnWOfbj
 // http://167.71.79.133/api/jobs/sugest
